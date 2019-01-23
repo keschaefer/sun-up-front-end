@@ -15,8 +15,9 @@ const SignUp = (props) => {
                   <Text>*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
                <TextInput style= {styles.inputUser}
                   placeholder= "Company's estimated annual energy cost 2019"/>
+                  <Text>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019!</Text>
                <TextInput style={styles.inputUser}
-                  placeholder= "Amount of energy generated in kW"/>
+                  placeholder= "Amount of annual energy generated in kW"/>
                   <Text>*Visit www.projectsunroof.com to estimate your energy potential</Text>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>

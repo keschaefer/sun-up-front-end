@@ -1,12 +1,20 @@
-import React from 'react';
+import  React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 
+class SignIn extends Component {
+   constructor() {
+      super() 
+         this.state = {
+            userEmail: "",
+            userPassword: "",
+         }
+      }
 
-const SignIn = (props) => {
-   return(
+   render() {
+      return (
      <View style= {styles.background}>
          <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
             <View style= {styles.inputContainer}>
@@ -27,9 +35,10 @@ const SignIn = (props) => {
             </View>
          </ImageBackground>
       </View>
-   )
+      );
+   }
 }
-
+ 
 const styles = StyleSheet.create({
    background: {
       opacity: 20
