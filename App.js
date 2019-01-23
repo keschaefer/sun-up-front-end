@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View, FlatList, Button, Text } from 'react-native';
-// import SignUp from './src/Components/SignUp.js';
+import SignUp from './src/Components/SignUp.js';
 import SignIn from './src/Components/SignIn.js';
 // import EnergyOutlook from './src/Components/EnergyOutlook.js';
 
@@ -48,7 +48,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-          <SignIn/> 
+          <SignUp/> 
       </View>
     );
   }

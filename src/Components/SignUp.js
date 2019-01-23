@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     inputButton: {
       minWidth: 50,
       backgroundColor: '#0098F7',
-      margin: 15,
+      margin: 8,
       borderRadius: 5,
     },
     buttonContainer: {
