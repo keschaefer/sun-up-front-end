@@ -1,25 +1,25 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux'
 import BackgroundImg from '../assets/solar-panels.jpg'
+import SlidingBar from '../assets/sliding-scale.png';
 
 const SignUp = (props) => {
    return(
      <View>
          <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-            <Text >We need a little info to estimate to your energy outlook</Text>
             <View style= {styles.inputContainer}>
-               <TextInput style={styles.inputUser}
-                  placeholder= "Company's estimated taxes 2019"/>
-                  <Text>*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
-               <TextInput style= {styles.inputUser}
-                  placeholder= "Company's estimated annual energy cost 2019"/>
-               <TextInput style={styles.inputUser}
-                  placeholder= "Amount of energy generated in kW"/>
-                  <Text>*Visit www.projectsunroof.com to estimate your energy potential</Text>
+               <Text style={{color:'white'}} style= {styles.header}>Here's your energy outlook!</Text>
+               <Text style={{color:'white'}}>*All numbers are estimates.</Text>
+               <Text style={{color:'white'}}>Cost to Install</Text>
+               <Text style={{color:'white'}}>Tax Benefit Over Five Years</Text>
+               <Text style={{color:'white'}}>Energy Bill Savings annually</Text>
+               <Text style={{color:'white'}}>Your Net Savings over the next Five Years</Text>
+               <Image source= {SlidingBar} style= {styles.image}/>
+               <Text style={{color:'white'}} >Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet.</Text>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
-                     <Button color='white'title= "Submit" onPress={() => Actions.useroutlook()}/>
+                     <Button color='white' title= "Submit" onPress={() => Actions.useroutlook()}/>
                   </View>
                </View>
             </View>
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'center',
-      height: "90%",
+      height: "100%",
+      // margin: 15,
     },
     inputUser: {
       width: "70%",
@@ -44,10 +45,11 @@ const styles = StyleSheet.create({
       backgroundColor: 'white'
     },
     image: {
-      width: 225,
-      height: 225,
-      marginTop: 50,
-      opacity: 80
+      width: "90%",
+    },
+    header: {
+      fontSize: 25,
+      color: 'white'
     },
     inputButton: {
       minWidth: 50,
