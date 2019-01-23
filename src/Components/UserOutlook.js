@@ -1,32 +1,25 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux'
-import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 
 const SignUp = (props) => {
    return(
      <View>
          <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
+            <Text >We need a little info to estimate to your energy outlook</Text>
             <View style= {styles.inputContainer}>
-               <Image style= {styles.image} source= {Logo} />
                <TextInput style={styles.inputUser}
-                  placeholder= "Full Name"/>
+                  placeholder= "Company's estimated taxes 2019"/>
+                  <Text>*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
                <TextInput style= {styles.inputUser}
-                  placeholder= "Company Name"/>
+                  placeholder= "Company's estimated annual energy cost 2019"/>
                <TextInput style={styles.inputUser}
-                  placeholder= "Email"/>
-               <TextInput style={styles.inputUser}
-               placeholder= "Password"/>
-               <TextInput style={styles.inputUser}
-               placeholder= "Confirm Password"/>
-                  {/* onChangeText= {props.placeNameChangeHandler} */}
+                  placeholder= "Amount of energy generated in kW"/>
+                  <Text>*Visit www.projectsunroof.com to estimate your energy potential</Text>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
-                     <Button color='white' title= "Existing User?" onPress={() => Actions.signin()}/>
-                  </View>
-                  <View style={styles.inputButton}>
-                     <Button color='white'title= "Sign Up" onPress={() => Actions.userinput()}/>
+                     <Button color='white'title= "Submit" onPress={() => Actions.useroutlook()}/>
                   </View>
                </View>
             </View>

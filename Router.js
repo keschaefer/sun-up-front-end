@@ -12,10 +12,10 @@ const RouterComponent = () => {
     return (
         <Router>
             <Stack key="root">
-                <Scene key="signin" component={SignIn} title="SignIn" initial />
-                <Scene key="signup" component={SignUp} title="SignUp" />
-                <Scene key="userinput" component={UserInput} title="UserInput" />
-                <Scene key="userreport" component={UserOutlook} title="UserReport" />
+                <Scene key="signin" component={SignIn} title="" initial />
+                <Scene key="signup" component={SignUp} title="" />
+                <Scene key="userinput" component={UserInput} title="" />
+                <Scene key="userreport" component={UserOutlook} title="" />
             </Stack>
         </Router>
     )

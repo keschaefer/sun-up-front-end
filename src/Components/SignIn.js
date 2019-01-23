@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
+
 
 const SignIn = (props) => {
    return(
@@ -19,7 +21,7 @@ const SignIn = (props) => {
                      <Button color='white' title= "Sign In"/>
                   </View>
                   <View style={styles.inputButton}>
-                     <Button color='white'title= "Sign Up"/>
+                     <Button color='white'title= "Sign Up" onPress={() => Actions.signup()}/>
                   </View>
                </View>
             </View>
