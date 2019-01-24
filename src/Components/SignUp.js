@@ -16,13 +16,13 @@ class SignUp extends Component {
             userConfirmPassword: "",
          }
       }
-   
+
    inputHandler = (name, text) => {
       this.setState({
          [name]: text
       })
+   
    }
-
    render() {
       return(
          <View>

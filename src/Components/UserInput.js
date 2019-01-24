@@ -3,30 +3,40 @@ import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBack
 import { Actions } from 'react-native-router-flux'
 // import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
+import { gql } from 'apollo-boost'
+import { graphql } from 'react-apollo'
 
-const SignUp = (props) => {
+const getUserQuery = gql`
+{ 
+   users {
+     name_full 
+   }
+}
+`
+const UserInput = (props) => {
+   console.log(this.props)
    return(
-     <View>
-         <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-            <View style= {styles.inputContainer}>
-               <Text style={{color:'white'}} >We need a little info to estimate to your energy outlook</Text>
-               <TextInput style={styles.inputUser}
-                  placeholder= "Company's estimated taxes 2019"/>
-                  <Text style={{color:'white'}} >*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
-               <TextInput style= {styles.inputUser}
-                  placeholder= "Company's estimated annual energy cost 2019"/>
-                  <Text style={{color:'white'}}>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019!</Text>
-               <TextInput style={styles.inputUser}
-                  placeholder= "Amount of annual energy generated in kW"/>
-                  <Text style={{color:'white'}}>*Visit www.projectsunroof.com to estimate your energy potential</Text>
-               <View style= {styles.buttonContainer}>
-                  <View style={styles.inputButton}>
-                     <Button color='white'title= "Submit" onPress={() => Actions.useroutlook()}/>
+         <View>
+            <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
+               <View style= {styles.inputContainer}>
+                  <Text style={{color:'white'}} >We need a little info to estimate to your energy outlook</Text>
+                  <TextInput style={styles.inputUser}
+                     placeholder= "Company's estimated taxes 2019"/>
+                     <Text style={{color:'white'}} >*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
+                  <TextInput style= {styles.inputUser}
+                     placeholder= "Company's estimated annual energy cost 2019"/>
+                     <Text style={{color:'white'}}>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019!</Text>
+                  <TextInput style={styles.inputUser}
+                     placeholder= "Amount of annual energy generated in kW"/>
+                     <Text style={{color:'white'}}>*Visit www.projectsunroof.com to estimate your energy potential</Text>
+                  <View style= {styles.buttonContainer}>
+                     <View style={styles.inputButton}>
+                        <Button color='white'title= "Submit" onPress={() => Actions.useroutlook()}/>
+                     </View>
                   </View>
                </View>
-            </View>
-         </ImageBackground>
-      </View>
+            </ImageBackground>
+         </View>
    )
 }
 
@@ -65,4 +75,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default SignUp
+export default graphql(getUserQuery)(UserInput)

@@ -23,23 +23,23 @@ class SignIn extends Component {
    render() {
       return (
      <View style= {styles.background}>
-         <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%', opacity: "50%"}}>
+         <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
             <View style= {styles.inputContainer}>
                <Image style= {styles.image} source= {Logo} />
-                     <Input style= {styles.inputs} onChangeText={(text) => this.inputHandler('userEmail', text)} 
-                     placeholder= "email"
-                     leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
-                     <Input onChangeText={(text) => this.inputHandler('userPassword', text)} 
-                     placeholder= "password"
-                     leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
+               <Input style= {styles.inputs} onChangeText={(text) => this.inputHandler('userEmail', text)} containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
+               placeholder= "email"
+               leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
+               <Input onChangeText={(text) => this.inputHandler('userPassword', text)} containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
+               placeholder= "password"
+               leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
                      <Button color='white' title= "Sign In" onPress={() => Actions.userinput()}/>
                   </View>
                   <View style={styles.inputButton}>
                      <Button color='white'title= "Sign Up" onPress={() => Actions.signup()}/>
-                  </View>
-               </View>
+                  </View>  
+               </View> 
             </View>
          </ImageBackground>
       </View>
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignItems: 'center',
       height: "100%",
-      backgroundColor: 'white'
     },
     image: {
       width: 225,
@@ -62,15 +61,10 @@ const styles = StyleSheet.create({
       marginBottom: 15,
       borderRadius: 5,
     },
-   //  inputs: {
-   //    backgroundColor: 'white',
-   //    flexDirection: 'column'
-   //  },
     inputButton: {
-      minWidth: 60,
+      minWidth: 100,
       backgroundColor: '#0098F7',
-      margin: 15,
-      marginTop: 25,
+      margin: 5,
       borderRadius: 5,
     },
     buttonContainer: {

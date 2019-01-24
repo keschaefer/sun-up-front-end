@@ -1,14 +1,13 @@
 import React from 'react';
 import Router from './Router';
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql'
+})
 
 export default class App extends React.Component {
-  
-  state = {
-    name_full: "",
-    org_name: "",
-    email: "",
-    password: "",
-  }
 
   placeNameChangeHandler = (val) => {
     // this.setState({
@@ -44,7 +43,9 @@ export default class App extends React.Component {
 
   render() {
     return (
+      <ApolloProvider client={client}>
           <Router/> 
+      </ApolloProvider>
     );
   }
 }
