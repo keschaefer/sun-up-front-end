@@ -13,6 +13,12 @@ class SignIn extends Component {
             userPassword: "",
          }
       }
+   
+   inputHandler = (name, text) => {
+      this.setState({
+         [name]: text
+      })
+   }
 
    render() {
       return (
@@ -20,15 +26,15 @@ class SignIn extends Component {
          <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%', opacity: "50%"}}>
             <View style= {styles.inputContainer}>
                <Image style= {styles.image} source= {Logo} />
-               <Input 
-                  placeholder= "email"
-                  leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
-               <Input 
-                  placeholder= "password"
-                  leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
+                     <Input style= {styles.inputs} onChangeText={(text) => this.inputHandler('userEmail', text)} 
+                     placeholder= "email"
+                     leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
+                     <Input onChangeText={(text) => this.inputHandler('userPassword', text)} 
+                     placeholder= "password"
+                     leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
-                     <Button color='white' title= "Sign In"/>
+                     <Button color='white' title= "Sign In" onPress={() => Actions.userinput()}/>
                   </View>
                   <View style={styles.inputButton}>
                      <Button color='white'title= "Sign Up" onPress={() => Actions.signup()}/>
@@ -56,6 +62,10 @@ const styles = StyleSheet.create({
       marginBottom: 15,
       borderRadius: 5,
     },
+   //  inputs: {
+   //    backgroundColor: 'white',
+   //    flexDirection: 'column'
+   //  },
     inputButton: {
       minWidth: 60,
       backgroundColor: '#0098F7',
