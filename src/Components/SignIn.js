@@ -50,13 +50,14 @@ class SignIn extends Component {
 const styles = StyleSheet.create({
    inputContainer: {
       flexDirection: 'column',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
       height: "100%",
+      padding: 25
     },
     image: {
-      width: 225,
-      height: 225,
+      width: 150,
+      height: 150,
       marginTop: 15,
       marginBottom: 15,
       borderRadius: 5,

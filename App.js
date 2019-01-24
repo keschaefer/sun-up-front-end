@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql'
+  uri: 'https://sun-up-back.herokuapp.com/graphql'
 })
 
 export default class App extends React.Component {
