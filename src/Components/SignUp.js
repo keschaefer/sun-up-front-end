@@ -17,11 +17,11 @@ class SignUp extends Component {
          }
       }
    
-   // updateInputState = () => {
-   //    this.setState({
-   //       [key]:
-   //    })
-   // }
+   inputHandler = (name, text) => {
+      this.setState({
+         [name]: text
+      })
+   }
 
    render() {
       return(
@@ -29,19 +29,19 @@ class SignUp extends Component {
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
                <View style= {styles.inputContainer}>
                   <Image style= {styles.image} source= {Logo} />
-                  <Input style={styles.inputUser}
+                  <Input onChangeText={(text) => this.inputHandler('userFullName', text)} 
                      placeholder= "Full Name"
                      leftIcon={{ type: 'font-awesome', name: 'user' }}/>
-                  <Input style= {styles.inputUser}
+                  <Input onChangeText={(text) => this.inputHandler('userCompanyName', text)}
                      placeholder= "Company Name"
                      leftIcon={{ type: 'font-awesome', name: 'building' }}/>
-                  <Input style={styles.inputUser}
+                  <Input onChangeText={(text) => this.inputHandler('userEmail', text)}
                      placeholder= "Email"
                      leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
-                  <Input style={styles.inputUser}
+                  <Input onChangeText={(text) => this.inputHandler('userPassword', text)}
                      placeholder= "Password"
                      leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
-                  <Input style={styles.inputUser}
+                  <Input onChangeText={(text) => this.inputHandler('userConfirmPassword', text)}
                      placeholder= "Confirm Password"
                      leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                   <View style= {styles.buttonContainer}>
