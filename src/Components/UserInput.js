@@ -8,17 +8,17 @@ const SignUp = (props) => {
    return(
      <View>
          <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-            <Text >We need a little info to estimate to your energy outlook</Text>
             <View style= {styles.inputContainer}>
+               <Text style={{color:'white'}} >We need a little info to estimate to your energy outlook</Text>
                <TextInput style={styles.inputUser}
                   placeholder= "Company's estimated taxes 2019"/>
-                  <Text>*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
+                  <Text style={{color:'white'}} >*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019!</Text>
                <TextInput style= {styles.inputUser}
                   placeholder= "Company's estimated annual energy cost 2019"/>
-                  <Text>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019!</Text>
+                  <Text style={{color:'white'}}>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019!</Text>
                <TextInput style={styles.inputUser}
                   placeholder= "Amount of annual energy generated in kW"/>
-                  <Text>*Visit www.projectsunroof.com to estimate your energy potential</Text>
+                  <Text style={{color:'white'}}>*Visit www.projectsunroof.com to estimate your energy potential</Text>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
                      <Button color='white'title= "Submit" onPress={() => Actions.useroutlook()}/>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       height: "90%",
+      padding: 20
     },
     inputUser: {
       width: "70%",

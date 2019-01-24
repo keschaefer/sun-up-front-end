@@ -18,9 +18,9 @@ const SignUp = (props) => {
                <Image source= {SlidingBar} style= {styles.image}/>
                <Text style={{color:'white'}} >Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet.</Text>
                <View style= {styles.buttonContainer}>
-                  <View style={styles.inputButton}>
+                  {/* <View style={styles.inputButton}>
                      <Button color='white' title= "Submit" onPress={() => Actions.useroutlook()}/>
-                  </View>
+                  </View> */}
                </View>
             </View>
          </ImageBackground>
