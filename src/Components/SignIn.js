@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Button, Image, Ima
 import { Actions } from 'react-native-router-flux';
 import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
+import { Input } from 'react-native-elements';
 
 class SignIn extends Component {
    constructor() {
@@ -16,14 +17,15 @@ class SignIn extends Component {
    render() {
       return (
      <View style= {styles.background}>
-         <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
+         <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%', opacity: "50%"}}>
             <View style= {styles.inputContainer}>
                <Image style= {styles.image} source= {Logo} />
-               <TextInput style={styles.inputUser}
-                  placeholder= "email"/>
-               <TextInput style={styles.inputUser}
-                  placeholder= "password"/>
-                  {/* onChangeText= {props.placeNameChangeHandler} */}
+               <Input 
+                  placeholder= "email"
+                  leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
+               <Input 
+                  placeholder= "password"
+                  leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
                      <Button color='white' title= "Sign In"/>
@@ -40,39 +42,33 @@ class SignIn extends Component {
 }
  
 const styles = StyleSheet.create({
-   background: {
-      opacity: 20
-   },
    inputContainer: {
       flexDirection: 'column',
-      justifyContent: 'space-around',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      height: "90%"
-    },
-    inputUser: {
-      width: "70%",
-      borderWidth: 1,
-      borderColor: '#A0A0A0',
-      height: 30,
-      borderRadius: 3,
+      height: "100%",
       backgroundColor: 'white'
     },
     image: {
       width: 225,
       height: 225,
-      marginTop: 50,
-      opacity: 50
+      marginTop: 15,
+      marginBottom: 15,
+      borderRadius: 5,
     },
     inputButton: {
-      minWidth: 50,
+      minWidth: 60,
       backgroundColor: '#0098F7',
       margin: 15,
+      marginTop: 25,
       borderRadius: 5,
     },
     buttonContainer: {
       display: "flex",
       flexDirection: 'row',
-      alignContent: 'space-between'
+      justifyContent: 'space-between',
+      width: "75%",
+      marginBottom: 20
     }
     
 })
