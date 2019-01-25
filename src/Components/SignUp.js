@@ -4,13 +4,24 @@ import { Actions } from 'react-native-router-flux'
 import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 import { Input } from 'react-native-elements';
+import { graphql, compose } from 'react-apollo';
+import gql from 'graphql-tag';
+
+const addUser = gql`
+mutation($password: String!, $name_full: String!, $email: String!, $org_name: String!) {
+   addUser(password: $password, name_full: $name_full, email: $email, org_name: $org_name){
+     id
+     name_full
+   }
+ }
+ `
 
 class SignUp extends Component {
    constructor() {
       super() 
          this.state = {
             userFullName: "",
-            userCompanyName: "",
+            userOrgName: "",
             userEmail: "",
             userPassword: "",
             userConfirmPassword: "",
@@ -23,7 +34,21 @@ class SignUp extends Component {
       })
    
    }
+
+   submitForm = () => {
+      this.props.addUser({
+         variables: {
+            password: this.state.userPassword,
+            name_full: this.state.userFullName,
+            email: this.state.userEmail,
+            org_name: this.state.userOrgName
+         }
+      })
+      Actions.userinput()
+   }
+
    render() {
+      console.log("PROPS", this.props)
       return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
@@ -33,7 +58,7 @@ class SignUp extends Component {
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
                      placeholder= "Full Name"
                      leftIcon={{ type: 'font-awesome', name: 'user' }}/>
-                  <Input onChangeText={(text) => this.inputHandler('userCompanyName', text)}
+                  <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
                      placeholder= "Company Name"
                      leftIcon={{ type: 'font-awesome', name: 'building' }}/>
@@ -51,7 +76,7 @@ class SignUp extends Component {
                      leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                   <View style= {styles.buttonContainer}>
                      <View style={styles.inputButton}>
-                        <Button color='white'title= "Sign Up" onPress={() => Actions.userinput()}/>
+                        <Button color='white'title= "Sign Up" onPress={() => this.submitForm()}/>
                      </View>
                      <View style={styles.inputButton}>
                         <Button color='white' title= "Existing User?" onPress={() => Actions.signin()}/>
@@ -96,4 +121,6 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SignUp
+export default compose(
+   graphql(addUser, {name: "addUser"})
+)(SignUp)
