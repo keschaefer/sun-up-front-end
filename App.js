@@ -1,11 +1,25 @@
 import React from 'react';
 import Router from './Router';
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { AppRegistry } from 'react-native';
+import gql from 'graphql-tag';
 
 const client = new ApolloClient({
-  uri: 'https://sun-up-back.herokuapp.com/graphql'
-})
+  uri: 'http://sun-up-back.herokuapp.com/graphql'
+});
+
+// client
+//   .query({
+//     query: gql`
+//       {
+//         users {
+//           name_full
+//         }
+//       }
+//     `
+//   })
+//   .then(result => console.log(result));
 
 export default class App extends React.Component {
 
@@ -49,3 +63,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+AppRegistry.registerComponent('MyApplication', () => App);

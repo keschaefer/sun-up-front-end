@@ -1,21 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux'
-// import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
+import ApolloClient from 'apollo-boost';
 import { gql } from 'apollo-boost'
 import { graphql } from 'react-apollo'
 
-const getUserQuery = gql`
-{ 
-   users {
-     name_full 
-   }
-}
-`
-const UserInput = () => {
-   console.log(this.props)
-   return(
+let users = []
+
+const client = new ApolloClient({
+   uri: 'http://sun-up-back.herokuapp.com/graphql'
+ });
+
+client
+ .query({
+    query: gql`
+       {
+       users {
+          name_full
+       }
+       }
+    `
+ }).then(result => console.log(result.data.users))
+//  .then(result => {
+//     this.setState({
+//        users: result
+//     })
+//  }   
+
+
+  class UserInput extends Component {
+   constructor() {
+      super() 
+         this.state = {
+            users: []
+         }
+      }
+
+   render() {
+      return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
                <View style= {styles.inputContainer}>
@@ -37,7 +60,8 @@ const UserInput = () => {
                </View>
             </ImageBackground>
          </View>
-   )
+      )
+   }
 }
 
 const styles = StyleSheet.create({
@@ -75,4 +99,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default graphql(getUserQuery)(UserInput)
+export default UserInput
