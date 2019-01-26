@@ -13,12 +13,12 @@ export default class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      currentUserId: null,
+      currentUserId: 3,
       currentUserName: ''
     }
   }
 
-  storeUserID = (user) => {
+  storeUserId = (user) => {
     this.setState({
       currentUserId: user.id,
       currentUserName: user.name_full

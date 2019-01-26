@@ -32,7 +32,6 @@ class SignUp extends Component {
       this.setState({
          [name]: text
       })
-   
    }
 
    submitForm = () => {
@@ -48,7 +47,6 @@ class SignUp extends Component {
    }
 
    render() {
-      console.log("PROPS", this.props)
       return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
@@ -81,8 +79,7 @@ class SignUp extends Component {
                      <View style={styles.inputButton}>
                         <Button color='white' title= "Existing User?" onPress={() => Actions.signin()}/>
                      </View>
-                  </View>
-                  
+                  </View>  
                </View>
             </ImageBackground>
          </View>
