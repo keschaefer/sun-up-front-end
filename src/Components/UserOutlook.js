@@ -20,12 +20,8 @@ class UserOutlook extends Component {
 constructor() {
    super() 
       this.state = {
-         currentUserid: "5c4b2e95769ad66ee19f2f88",
-         currentUserNameFull: "Kate Schaefer",
-         // current_year_tax: 200000,
-         // current_year_energy_cost: 40000,
-         // roof_square_footage: 2500,
-         // projected_energy_annual_kW: 35,
+         currentUserid: "",
+         currentUserNameFull: ""
    }
 }
 
@@ -48,6 +44,14 @@ energySavings = () => {
    let energySavings = (((this.props.getUser.user.roof_square_footage * .014198) * 3.5) * .13) * 365
    return energySavings.toFixed(2)
 }
+
+netSavings = (years) => {
+   console.log(this.costOfInstall(), this.taxITC(), this.bonusDepreciation(), this.energySavings(), years)
+   let netSavings = Number(this.costOfInstall()) - ( Number(this.taxITC()) + Number(this.bonusDepreciation()) + (years * Number(this.energySavings())))
+   return netSavings.toFixed(2)
+}
+
+
    render() {
       if (!this.props.getUser.loading) {
          return (
@@ -58,7 +62,7 @@ energySavings = () => {
                <Text>One Time Investment Tax Credit 2019 ${this.taxITC()}</Text>
                <Text>One Time Bonus Depreciation for 2019 ${this.bonusDepreciation()}</Text>
                <Text>Energy Bill Savings annually ${this.energySavings()}</Text>
-               <Text>Your Net Savings over the next Five Years</Text>
+               <Text>Your Net Savings over the next Five Years ${this.netSavings(5)}</Text>
                <Image source= {SlidingBar} style= {styles.image}/>
                <Text >Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
                <View style= {styles.buttonContainer}>
