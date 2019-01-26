@@ -73,8 +73,8 @@ render() {
                placeholder= "2019 Energy Bill"/>
                <Text style={styles.subText}>*Your 2018 energy bill is good placeholder if you don"t anticipate much change in your energy needs for 2019</Text>
                <TextInput onChangeText={(text) => this.inputHandler('projected_energy_annual_kW', text)} style={styles.inputUser}
-               placeholder= "kW Generated Annually"/>
-               <Text style={styles.subText}>*Visit www.projectsunroof.com to estimate your energy potential</Text>
+               placeholder= "Square Feet Available for Panels"/>
+               <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage your energy potential</Text>
                <View style={styles.inputButton}>
                   <Button color="white"title= "Submit" onPress={() => {Actions.useroutlook()}}/>
                </View>
