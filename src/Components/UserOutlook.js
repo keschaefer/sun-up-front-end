@@ -31,24 +31,20 @@ costOfInstall = () => {
 }
 
 taxITC = () => {
-   let taxITC = this.costOfInstall() * .3 
-   return taxITC.toFixed(2)
+   return (this.costOfInstall() * .3).toFixed(2)
+  
 }
 
 bonusDepreciation = () => {
-   let bonusDepreciation = (this.costOfInstall() * .85) * .3
-   return bonusDepreciation.toFixed(2)
+   return ((this.costOfInstall() * .85) * .3).toFixed(2)
 }
 
 energySavings = () => {
-   let energySavings = (((this.props.getUser.user.roof_square_footage * .014198) * 3.5) * .13) * 365
-   return energySavings.toFixed(2)
+   return ((((this.props.getUser.user.roof_square_footage * .014198) * 3.5) * .13) * 365).toFixed(2)
 }
 
 netSavings = (years) => {
-   console.log(this.costOfInstall(), this.taxITC(), this.bonusDepreciation(), this.energySavings(), years)
-   let netSavings = Number(this.costOfInstall()) - ( Number(this.taxITC()) + Number(this.bonusDepreciation()) + (years * Number(this.energySavings())))
-   return netSavings.toFixed(2)
+   return (Number(this.costOfInstall()) - ( Number(this.taxITC()) + Number(this.bonusDepreciation()) + (years * Number(this.energySavings())))).toFixed(2)
 }
 
 
