@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import MatchCard from './MatchCard.js'
+import Seeds from '../seedMatches.json';
 import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import SlidingBar from '../assets/sliding-scale.png';
+
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
-import { CheckBox } from 'react-native-elements'
+
 
 const getUser = gql`
 query {
@@ -52,19 +52,26 @@ energyPotential = () => {
 
 }
 
+sendMessage = () =>{
+   console.log("Hi")
+}
+
    render() {
       if (!this.props.getUser.loading) {
-         return (
-            <View style= {styles.inputContainer}>
-               <Text></Text>
-               <Text></Text>
-               <View>
-               <View style={styles.inputButton}>
-                     <Button color='white' title= "Message"/>
-                  </View> 
+         return Seeds.map(seed => {
+            console.log(seed.name_full)
+            return (
+               <View key={seed.name_full} style= {styles.inputContainer}>
+                  <Text>{seed.name_full}</Text>
+                  <Text>{seed.org_name}</Text>
+                  <View>
+                  <View style={styles.inputButton}>
+                        <Button color='white' title= "Message" onPress={() => this.sendMessage()}/>
+                     </View> 
+                  </View>
                </View>
-            </View>
-         )
+            )
+         })
       } else {
          return (
             <View>
