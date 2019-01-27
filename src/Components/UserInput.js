@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { View, StyleSheet, TextInput, Button, Text } from "react-native";
-import { Actions } from "react-native-router-flux"
+import { View, StyleSheet, TextInput, Button, Text, ImageBackground, Image, KeyboardAvoidingView} from "react-native";
+import { Actions } from "react-native-router-flux";
+import Backdrop from "../assets/leaves-pattern.png";
+import Logo from '../assets/SunUp_Logo.png';
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag"
-import { graphql, compose } from "react-apollo"
+import gql from "graphql-tag";
+import { graphql, compose } from "react-apollo";
+import { Input } from 'react-native-elements';
 
-// const client = new ApolloClient({
-//    uri: "http://sun-up-back.herokuapp.com/graphql"
-// });
 
 const getUser = gql`
 query {
@@ -64,25 +64,37 @@ submitFormUserInput = () => {
 render() {
    if (!this.props.getUser.loading) {
       return(
-         <View style= {styles.inputContainer}>
-            <Text style = {styles.header}>{this.props.getUser.user.name_full}, we need a little info to estimate to your energy outlook</Text>
-               <TextInput onChangeText={(text) => this.inputHandler('current_year_tax', text)} style={styles.inputUser} 
-               placeholder= "2019 Taxes"/>
-               <Text style = {styles.subText}>*Your 2018 tax burden is good placeholder if you don"t anticipate much change in your taxes for 2019</Text>
-               <TextInput onChangeText={(text) => this.inputHandler('current_year_energy_cost', text)} style= {styles.inputUser}
-               placeholder= "2019 Energy Bill"/>
-               <Text style={styles.subText}>*Your 2018 energy bill is good placeholder if you don"t anticipate much change in your energy needs for 2019</Text>
-               <TextInput onChangeText={(text) => this.inputHandler('projected_energy_annual_kW', text)} style={styles.inputUser}
-               placeholder= "Square Feet Available for Panels"/>
-               <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage your energy potential</Text>
-               <View style={styles.inputButton}>
-                  <Button color="white"title= "Submit" onPress={() => {Actions.useroutlook()}}/>
-               </View>
+         <View>
+            <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
+               <KeyboardAvoidingView style= {styles.inputContainer} behavior= "padding">
+                  <Text style = {styles.header}>{this.props.getUser.user.name_full}, we need a little info to estimate to your energy outlook:</Text>
+                     <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "100%"}} inputContainerStyle= {{borderBottomWidth: 0}} inputStyle={{fontSize: 14}}
+                     placeholder= "Your 2019 Tax Burden" keyboardType= "numbers-and-punctuation"
+                     leftIcon={{ type: 'font-awesome', name: 'usd' }}/>
+                  <Text style = {styles.subText}>*Your 2018 tax burden is good placeholder if you don't anticipate much change in your taxes for 2019.</Text>
+                     <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "100%"}} inputContainerStyle= {{borderBottomWidth: 0}} inputStyle={{fontSize: 14}}
+                     placeholder= "Your Total 2019 Energy Costs" keyboardType= "numbers-and-punctuation"
+                     leftIcon={{ type: 'font-awesome', name: 'usd' }}/>
+                  <Text style={styles.subText}>*Your 2018 energy bill is good placeholder if you don't anticipate much change in your energy needs for 2019.</Text>
+                     <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "100%"}} inputContainerStyle= {{borderBottomWidth: 0}} inputStyle={{fontSize: 14}}
+                     placeholder= "Square Feet Available for Solar" keyboardType= "numbers-and-punctuation"
+                     leftIcon={{ type: 'font-awesome', name: 'leaf' }}/>
+                  <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage.</Text>
+                     <View style={styles.inputButton}>
+                        <Button color="white"title= "Submit" onPress={() => {Actions.useroutlook()}}/>
+                     </View>
+               </KeyboardAvoidingView>
+            </ImageBackground>
          </View>
       )} else {
          return (
             <View>
-               <Text>Loading...</Text>
+               <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
+                  <Image style= {styles.image} source= {Logo} />
+               </ImageBackground>
             </View>
          )
       }
@@ -91,42 +103,36 @@ render() {
 
 const styles = StyleSheet.create({
    inputContainer: {
-      flexDirection: "column",
       justifyContent: "space-around",
       height: "100%",
       padding: 20,
-      backgroundColor: "white"
     },
-    inputUser: {
-      width: "70%",
-      borderWidth: 1,
-      borderColor: "#A0A0A0",
-      height: 30,
-      borderRadius: 3,
-      backgroundColor: "white"
-    },
+   //  inputUser: {
+   //    width: "70%",
+   //    borderWidth: 1,
+   //    borderColor: "#A0A0A0",
+   //    height: 30,
+   //    borderRadius: 3,
+   //    backgroundColor: "white"
+   //  },
     image: {
       width: 225,
       height: 225,
       marginTop: 50,
-      opacity: 80
     },
     inputButton: {
-      minWidth: 50,
       backgroundColor: "#0098F7",
       margin: 8,
       borderRadius: 5,
     },
-    buttonContainer: {
-      flexDirection: "row",
-      justifyContent: "space-around"
-    },
     header: {
       fontWeight: "bold",
-      fontSize: 20
+      fontSize: 20,
+      color: "#4d4d4d"
     },
     subText: {
-      fontSize: 10
+      fontSize: 12,
+      color: "#4d4d4d"
     }
     
 })
