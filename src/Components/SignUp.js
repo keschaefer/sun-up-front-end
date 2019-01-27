@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux'
 import Logo from '../assets/SunUp_Logo.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
@@ -50,37 +50,35 @@ class SignUp extends Component {
       return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-               <View style= {styles.inputContainer}>
-               <Image style= {styles.image} source= {Logo} />
+               <KeyboardAvoidingView style= {styles.inputContainer} behavior= "padding">
+                  <Image style= {styles.image} source= {Logo} />
                   <Input onChangeText={(text) => this.inputHandler('userFullName', text)} 
-                     containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
-                     placeholder= "Full Name"
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}}
+                     placeholder= "full name"
                      leftIcon={{ type: 'font-awesome', name: 'user' }}/>
                   <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
-                     containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
-                     placeholder= "Company Name"
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}}
+                     placeholder= "company name"
                      leftIcon={{ type: 'font-awesome', name: 'building' }}/>
-                  <Input onChangeText={(text) => this.inputHandler('userEmail', text)}
-                     containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
-                     placeholder= "Email"
-                     leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
-                  <Input onChangeText={(text) => this.inputHandler('userPassword', text)}
-                     containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
-                     placeholder= "Password"
-                     leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
+                  <Input onChangeText={(text) => this.inputHandler('userEmail', text)} 
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} 
+                     inputContainerStyle= {{borderBottomWidth: 0}} placeholder= "email" autoCapitalize= "none" 
+                     autoCorrect= {false} keyboardType= "email-address" leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
+                  <Input onChangeText={(text) => this.inputHandler('userPassword', text)} 
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} 
+                     inputContainerStyle= {{borderBottomWidth: 0}} placeholder= "password" secureTextEntry leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                   <Input onChangeText={(text) => this.inputHandler('userConfirmPassword', text)}
-                     containerStyle={{ backgroundColor: 'white', borderRadius: 15}} inputContainerStyle= {{borderBottomWidth: 0}}
-                     placeholder= "Confirm Password"
-                     leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
+                     containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}}
+                     placeholder= "confirm password" secureTextEntry leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
                   <View style= {styles.buttonContainer}>
-                     <View style={styles.inputButton}>
+                     <TouchableOpacity style={styles.inputButton}>
+                        <Button color='white' title= "Sign In" onPress={() => Actions.signin()}/>
+                     </TouchableOpacity>
+                     <TouchableOpacity style={styles.inputButton}>
                         <Button color='white'title= "Sign Up" onPress={() => this.submitForm()}/>
-                     </View>
-                     <View style={styles.inputButton}>
-                        <Button color='white' title= "Existing User?" onPress={() => Actions.signin()}/>
-                     </View>
+                     </TouchableOpacity>  
                   </View>  
-               </View>
+               </KeyboardAvoidingView>
             </ImageBackground>
          </View>
       )
@@ -89,33 +87,29 @@ class SignUp extends Component {
 
 const styles = StyleSheet.create({
    inputContainer: {
-      flexDirection: 'column',
       justifyContent: 'space-between',
       alignItems: 'center',
       height: "100%",
+      paddingTop: 40,
+      paddingBottom: 40
     },
     image: {
-      width: 200,
-      height: 200,
-      marginTop: 15,
-      marginBottom: 15,
-      borderRadius: 5,
-    },
-    inputButton: {
-      minWidth: 60,
-      backgroundColor: '#0098F7',
-      margin: 15,
-      marginTop: 25,
+      width: 150,
+      height: 150,
       borderRadius: 5,
     },
     buttonContainer: {
       display: "flex",
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center',
-      width: "75%",
-      marginBottom: 20
-    }
+      width: "85%",
+      marginBottom: 40
+    },
+    inputButton: {
+      width: "45%",
+      backgroundColor: '#0098F7',
+      borderRadius: 5,
+    } 
 })
 
 export default compose(
