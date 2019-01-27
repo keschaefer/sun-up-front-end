@@ -47,7 +47,6 @@ netSavings = (years) => {
    return (Number(this.costOfInstall()) - ( Number(this.taxITC()) + Number(this.bonusDepreciation()) + (years * Number(this.energySavings())))).toFixed(2)
 }
 
-
    render() {
       if (!this.props.getUser.loading) {
          return (
@@ -63,7 +62,7 @@ netSavings = (years) => {
                <Text >Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
                <View style= {styles.buttonContainer}>
                   <View style={styles.inputButton}>
-                     <Button color='white' title= "Enroll" onPress={() => Actions.useroutlook()}/>
+                     <Button color='white' title= "Enroll" onPress={() => Actions.matchmaking()}/>
                   </View>
                </View>
             </View>

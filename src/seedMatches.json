@@ -1,0 +1,51 @@
+[
+   {
+   "password": "123",
+   "name_full": "Dane Parke",
+   "email": "dane@gmail.com",
+   "org_name": "Dane's Outdoor Gear",
+   "current_year_tax": 200000,
+   "current_year_energy_cost": 6000,
+   "roof_square_footage": 2000,
+   "projected_energy_annual_kW": 0
+  },
+  {
+   "password": "123",
+   "name_full": "Beef Mitch",
+   "email": "beef@gmail.com",
+   "org_name": "Where's the Beef Hamburgers",
+   "current_year_tax": 100000,
+   "current_year_energy_cost": 4000,
+   "roof_square_footage": 2500,
+   "projected_energy_annual_kW": 0
+  },
+  {
+   "password": "123",
+   "name_full": "Phil Hengemuhle",
+   "email": "phil@gmail.com",
+   "org_name": "Auto Paradise",
+   "current_year_tax": 200000,
+   "current_year_energy_cost": 20000,
+   "roof_square_footage": 5000,
+   "projected_energy_annual_kW": 0
+  },{
+   "password": "123",
+   "name_full": "Ben Brinckerhoff",
+   "email": "ben@gmail.com",
+   "org_name": "Brinck Computers and Such",
+   "current_year_tax": 15000,
+   "current_year_energy_cost": 3000,
+   "roof_square_footage": 1000,
+   "projected_energy_annual_kW": 0
+  },
+  {
+   "password": "123",
+   "name_full": "Sonja Chacon",
+   "email": "sonja@gmail.com",
+   "org_name": "Steminist Fashion",
+   "current_year_tax": 25000,
+   "current_year_energy_cost": 3000,
+   "roof_square_footage": 1000,
+   "projected_energy_annual_kW": 0
+  }
+] 
