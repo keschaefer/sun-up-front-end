@@ -1,51 +1,26 @@
 # SunUp
 
-inQuizlit is a full stack application created to assess an organization's financial benefit as a result of solar installation. 
+SunUp is a full stack application created to assess an organization's financial benefit as a result of solar installation. 
 
 ## Links
 
-* [SunUp App]("") - Download SunUp from the App Store.
-* [SunUp Server]("") - SunUp official server.
+* [SunUp App]("") - Coming Soon...Download SunUp from the App Store.
+* [SunUp Server]("http://sun-up-back.herokuapp.com/graphql") - SunUp official server.
 * [SunUp Front-End Repository](https://github.com/keschaefer/sun-up-front-end) - SunUp front-end Github repository.
 * [SunUp Back-End Repository](https://github.com/keschaefer/sun-up-back-end) - SunUp back-end Github repository.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
+##Technologies Used
 
 What things you need to install the software and how to install them
 
 * [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
-* [Node.js](https://www.nodejs.org/) - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
-* [Angular CLI](https://www.npmjs.com/package/@angular/cli) - Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
-* [Heroku](https://www.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+* [React Native](https://facebook.github.io/react-native/docs/getting-started.html) - React Native is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android. It’s based on React, but instead of targeting the browser, it targets mobile platforms.
+* [Apollo GraphQL](https://www.apollographql.com/) - Built on Apollo's core open source GraphQL client and server, the Apollo GraphQL Platform adds open source devtools and cloud services to implement development workflows and production capabilities that help you adopt GraphQL the right way, incrementally, on top of your existing codebase and APIs.
+* [React Native Router Flux](https://www.npmjs.com/package/react-native-router-flux) - React Native Router Flux enables navigation in mobile apps built in React Native. 
+* [React Native Elements](https://react-native-training.github.io/react-native-elements/) - A cross platform React Native UI toolkit to design your React Native app. 
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
+## Preview
 
-1. Install dependencies:
-
-```
-npm install
-```
-
-2. Build the project:
-
-```
-ng build
-```
-3. Run the server:
-
-```
-ng serve -o
-```
-
-## Technologies
-
-* [React Native](https://facebook.github.io/react-native/) - React Native lets you build mobile apps using only JavaScript. It uses the same design as React, letting you compose a rich mobile UI using declarative components..
-* [React Native Router Flux]() - 
-* [React Native Elements]() - 
-
+![snag.gy]()
+![snag.gy]()
