@@ -93,7 +93,7 @@ render() {
          return (
             <View>
                <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
-                  <View style= {styles.inputContainer}>
+                  <View style= {styles.inputContainerLoading}>
                      <Image style= {styles.image} source= {Logo} />
                   </View>
                </ImageBackground>
@@ -106,6 +106,12 @@ render() {
 const styles = StyleSheet.create({
    inputContainer: {
       justifyContent: "space-around",
+      height: "100%",
+      padding: 20,
+    },
+    inputContainerLoading: {
+      justifyContent: "center",
+      alignItems: "center",
       height: "100%",
       padding: 20,
     },

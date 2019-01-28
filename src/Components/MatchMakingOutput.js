@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import MatchCard from './MatchCard.js'
 import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
+import Backdrop from "../assets/leaves-pattern.png";
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import { CheckBox } from 'react-native-elements'
@@ -54,23 +55,22 @@ energyPotential = () => {
    render() {
       if (!this.props.getUser.loading) {
          return (
-            <View style= {styles.inputContainer}>
-               <Text style= {styles.header}>It's time to find a Match</Text>
-               <Text>We've based your matches on your personalized estimates</Text>
-               <Text>Cost to Install ${this.costOfInstall()}</Text>
-               <Text>One Time Investment Tax Credit 2019 ${this.taxITC()}</Text>
-               <Text>One Time Bonus Depreciation for 2019 ${this.bonusDepreciation()}</Text>
-               <Text>Energy Bill Savings annually ${this.energySavings()}</Text>
-               <Text>Your Net Savings over the next Five Years ${this.netSavings(5)}</Text>
-               <View>
-                  <MatchCard/>
-               </View>
-               <View style= {styles.buttonContainer}>
-                  <View style={styles.inputButton}>
-                     <CheckBox center title='Click Here'checked={this.state.checked} />
-                  </View>
-               </View>
-            </View>
+            <View>
+               <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
+                  <View style= {styles.container}>
+                     <View>
+                        <Text style= {styles.header}>It's time to find a Match!</Text>
+                        <Text>We've based your matches on your personalized estimates</Text>
+                     </View>
+                     <View>
+                        <MatchCard/>
+                     </View>
+                        <View style= {styles.inputContainer}>
+                           <CheckBox center title='Click Here'checked={this.state.checked} />
+                        </View>
+                     </View>
+            </ImageBackground>
+         </View>
          )
       } else {
          return (
@@ -83,38 +83,57 @@ energyPotential = () => {
 }
 
 const styles = StyleSheet.create({
-   inputContainer: {
-      flexDirection: 'column',
-      justifyContent: 'space-around',
+   container: {
+      justifyContent: "space-between",
       height: "100%",
-      backgroundColor: 'white',
-      padding: 15,
-    },
-    inputUser: {
-      width: "70%",
-      borderWidth: 1,
-      borderColor: '#A0A0A0',
-      height: 30,
-      borderRadius: 3,
-      backgroundColor: 'white'
+      padding: 20,
+      alignItems: "center"
     },
     image: {
-      width: "90%",
+      width: 225,
+      height: 225,
+      marginTop: 50,
+    },
+    imageBar: {
+      width: "100%"
+    },
+    inputContainer: {
+      width: "50%",
     },
     header: {
-      fontSize: 25,
+      fontWeight: "bold",
+      fontSize: 20,
+      color: "#4d4d4d"
     },
-    inputButton: {
-      minWidth: 50,
-      backgroundColor: '#0098F7',
-      margin: 8,
-      borderRadius: 5,
+    mainTextContainer: {
+      minHeight: 250,
+      justifyContent: 'space-between',
+      width: "100%",
+      marginTop: 20,
+      marginBottom: 20,
     },
-    buttonContainer: {
+    textContainer: {
       flexDirection: 'row',
-      justifyContent: 'space-around'
-    }
-    
+      justifyContent: 'space-between',
+      width: "100%",
+      marginTop: 3
+    },
+    subTextContainer: {
+      flexWrap: "wrap",
+      width: "58%"
+    },
+    subTextNumericContainer: {
+      width: "38%"
+    },
+    subText: {
+      fontSize: 16,
+      color: "#4d4d4d",
+    },
+    values: {
+      fontSize: 16,
+      color: "#4d4d4d",
+      fontWeight: "bold",
+    } 
 })
 
 export default compose(
