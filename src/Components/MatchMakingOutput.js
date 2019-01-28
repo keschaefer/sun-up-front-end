@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import MatchCard from './MatchCard.js'
 import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text, ScrollView } from 'react-native';
-// import { Actions } from 'react-native-router-flux';
 import Backdrop from "../assets/leaves-pattern.png";
+/* Background pattern from Toptal Subtle Patterns */
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import { CheckBox } from 'react-native-elements'
@@ -66,8 +66,8 @@ handleCheckBox = () => {
                <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
                   <ScrollView contentContainerStyle= {styles.container}>
                      <View style= {{width: "100%", paddingBottom: 10}}>
-                        <Text style= {styles.mainHeader}>It's time to find a Match!</Text>
-                        <Text style= {styles.subText}>We've based your matches on your personalized estimates</Text>
+                        <Text style= {styles.mainHeader}>Here Are Your Matches!</Text>
+                        <Text style= {styles.subText}>We've based your matches on your personalized solar estimates</Text>
                      </View>
                      <View style= {{width: "100%", paddingBottom: 10}}>
                         <MatchCard/>
@@ -77,7 +77,6 @@ handleCheckBox = () => {
                            <CheckBox center title='Click Here!' containerStyle= {{backgroundColor: 'transparent', borderColor: 'transparent'}} checked={this.state.checked} onPress= {() => this.handleCheckBox()}/>
                         </View>
                      </ScrollView>
-
             </ImageBackground>
          </View>
          )
@@ -94,7 +93,6 @@ handleCheckBox = () => {
 const styles = StyleSheet.create({
    container: {
       justifyContent: "space-between",
-      // height: "100%",
       padding: 20,
       alignItems: "center"
     },

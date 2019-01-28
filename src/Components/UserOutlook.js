@@ -5,6 +5,7 @@ import SlidingBar from '../assets/sliding-scale.png';
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import Backdrop from "../assets/leaves-pattern.png";
+/* Background pattern from Toptal Subtle Patterns */
 import Logo from '../assets/SunUp_Logo.png';
 
 const getUser = gql`
@@ -103,7 +104,7 @@ netSavings = (years) => {
                         </View>
                      </View>
                      {/* <Image source= {SlidingBar} style= {styles.imageBar}/> */}
-                     <Text>*All numbers are estimates. Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
+                     <Text style= {styles.subText}>Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
                      <View style= {styles.buttonContainer}>
                         <View style={styles.inputButton}>
                            <Button color='white' title= "Enroll" onPress={() => Actions.matchmaking()}/>
@@ -143,11 +144,16 @@ const styles = StyleSheet.create({
       backgroundColor: "#0098F7",
       margin: 8,
       borderRadius: 5,
+      width: "50%",
     },
     header: {
       fontWeight: "bold",
       fontSize: 20,
       color: "#4d4d4d"
+    },
+    buttonContainer: {
+      width: "100%",
+      alignItems: "center",
     },
     mainTextContainer: {
       minHeight: 250,

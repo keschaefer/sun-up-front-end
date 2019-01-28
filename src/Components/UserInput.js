@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, StyleSheet, TextInput, Button, Text, ImageBackground, Image, KeyboardAvoidingView} from "react-native";
 import { Actions } from "react-native-router-flux";
 import Backdrop from "../assets/leaves-pattern.png";
+/* Background pattern from Toptal Subtle Patterns */
 import Logo from '../assets/SunUp_Logo.png';
 import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
@@ -83,9 +84,11 @@ render() {
                      placeholder= "Square Feet Available for Solar" keyboardType= "numbers-and-punctuation"
                      leftIcon={{ type: 'font-awesome', name: 'leaf' }}/>
                   <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage.</Text>
+                  <View style= {styles.buttonContainer}>
                      <View style={styles.inputButton}>
                         <Button color="white"title= "Submit" onPress={() => {Actions.useroutlook()}}/>
                      </View>
+                  </View>
                </KeyboardAvoidingView>
             </ImageBackground>
          </View>
@@ -115,6 +118,10 @@ const styles = StyleSheet.create({
       height: "100%",
       padding: 20,
     },
+    buttonContainer: {
+      width: "100%",
+      alignItems: "center",
+    },
     image: {
       width: 225,
       height: 225,
@@ -124,6 +131,8 @@ const styles = StyleSheet.create({
       backgroundColor: "#0098F7",
       margin: 8,
       borderRadius: 5,
+      width: "50%",
+      alignItems: "center"
     },
     header: {
       fontWeight: "bold",

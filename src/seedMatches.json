@@ -8,7 +8,7 @@
    "current_year_energy_cost": 6000,
    "roof_square_footage": 2000,
    "projected_energy_annual_kW": 0,
-   "image": "../assets/Dane.jpeg"
+   "image": "https://dl.dropboxusercontent.com/s/fy97due07t5qwyk/Dane.jpeg"
   },
   {
    "password": "123",
@@ -19,7 +19,7 @@
    "current_year_energy_cost": 4000,
    "roof_square_footage": 2500,
    "projected_energy_annual_kW": 0,
-   "image": "../assets/Beef.jpeg"
+   "image": "https://dl.dropboxusercontent.com/s/6nh5bl9ohaym320/Beef.jpeg"
   },
   {
    "password": "123",
@@ -30,7 +30,7 @@
    "current_year_energy_cost": 20000,
    "roof_square_footage": 5000,
    "projected_energy_annual_kW": 0,
-   "image": "../assets/Phil.jpeg"
+   "image": "https://dl.dropboxusercontent.com/s/84nw1f44p1cwh9o/Phil.jpeg"
   },
   {
    "password": "123",
@@ -41,7 +41,7 @@
    "current_year_energy_cost": 3000,
    "roof_square_footage": 1000,
    "projected_energy_annual_kW": 0,
-   "image": "../assets/Ben.jpeg"
+   "image": "https://dl.dropboxusercontent.com/s/89uu3q18q3wne4n/Ben.jpeg"
   },
   {
    "password": "123",
@@ -52,6 +52,6 @@
    "current_year_energy_cost": 3000,
    "roof_square_footage": 1000,
    "projected_energy_annual_kW": 0,
-   "image": "../assets/Sonja.jpeg"
+   "image": "https://dl.dropboxusercontent.com/s/a038ahpjcfp2wtc/Sonja.jpeg"
   }
 ] 
