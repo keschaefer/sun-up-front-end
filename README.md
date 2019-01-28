@@ -4,8 +4,8 @@ SunUp is a full stack application created to assess an organization's financial 
 
 ## Links
 
-* [SunUp App]("") - Coming Soon...Download SunUp from the App Store.
-* [SunUp Server]("http://sun-up-back.herokuapp.com/graphql") - SunUp official server.
+* [SunUp App]() - Coming Soon...Download SunUp from the App Store.
+* [SunUp Server](http://sun-up-back.herokuapp.com/graphql) - SunUp official server.
 * [SunUp Front-End Repository](https://github.com/keschaefer/sun-up-front-end) - SunUp front-end Github repository.
 * [SunUp Back-End Repository](https://github.com/keschaefer/sun-up-back-end) - SunUp back-end Github repository.
 
