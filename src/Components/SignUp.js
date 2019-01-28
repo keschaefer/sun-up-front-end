@@ -50,7 +50,7 @@ class SignUp extends Component {
       return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-               <KeyboardAvoidingView style= {styles.inputContainer} behavior= "padding">
+               <KeyboardAvoidingView style= {styles.inputContainer}>
                   <Image style= {styles.image} source= {Logo} />
                   <Input onChangeText={(text) => this.inputHandler('userFullName', text)} 
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}}

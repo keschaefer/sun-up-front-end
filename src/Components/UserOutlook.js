@@ -103,7 +103,7 @@ netSavings = (years) => {
                         </View>
                      </View>
                      {/* <Image source= {SlidingBar} style= {styles.imageBar}/> */}
-                     <Text>*All nubmers are estimates. Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
+                     <Text>*All numbers are estimates. Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
                      <View style= {styles.buttonContainer}>
                         <View style={styles.inputButton}>
                            <Button color='white' title= "Enroll" onPress={() => Actions.matchmaking()}/>
@@ -128,7 +128,7 @@ netSavings = (years) => {
 const styles = StyleSheet.create({
    container: {
       justifyContent: "space-between",
-      height: "100%",
+      // height: "100%",
       padding: 20,
     },
     image: {

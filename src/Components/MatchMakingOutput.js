@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MatchCard from './MatchCard.js'
-import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text, ScrollView } from 'react-native';
 // import { Actions } from 'react-native-router-flux';
 import Backdrop from "../assets/leaves-pattern.png";
 import gql from "graphql-tag";
@@ -23,7 +23,8 @@ constructor() {
    super() 
       this.state = {
          currentUserid: "",
-         currentUserNameFull: ""
+         currentUserNameFull: "",
+         checked: false,
    }
 }
 
@@ -52,23 +53,31 @@ energyPotential = () => {
 
 }
 
+handleCheckBox = () => {
+   this.setState({
+      checked: !this.state.checked
+   })
+}
+
    render() {
       if (!this.props.getUser.loading) {
          return (
             <View>
                <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
-                  <View style= {styles.container}>
-                     <View>
-                        <Text style= {styles.header}>It's time to find a Match!</Text>
-                        <Text>We've based your matches on your personalized estimates</Text>
+                  <ScrollView contentContainerStyle= {styles.container}>
+                     <View style= {{width: "100%", paddingBottom: 10}}>
+                        <Text style= {styles.mainHeader}>It's time to find a Match!</Text>
+                        <Text style= {styles.subText}>We've based your matches on your personalized estimates</Text>
                      </View>
-                     <View>
+                     <View style= {{width: "100%", paddingBottom: 10}}>
                         <MatchCard/>
                      </View>
-                        <View style= {styles.inputContainer}>
-                           <CheckBox center title='Click Here'checked={this.state.checked} />
+                        <View>
+                           <Text style= {styles.subText}>Interested in receiving alerts about new matches? </Text>
+                           <CheckBox center title='Click Here!' containerStyle= {{backgroundColor: 'transparent', borderColor: 'transparent'}} checked={this.state.checked} onPress= {() => this.handleCheckBox()}/>
                         </View>
-                     </View>
+                     </ScrollView>
+
             </ImageBackground>
          </View>
          )
@@ -85,7 +94,7 @@ energyPotential = () => {
 const styles = StyleSheet.create({
    container: {
       justifyContent: "space-between",
-      height: "100%",
+      // height: "100%",
       padding: 20,
       alignItems: "center"
     },
@@ -94,15 +103,18 @@ const styles = StyleSheet.create({
       height: 225,
       marginTop: 50,
     },
-    imageBar: {
-      width: "100%"
-    },
     inputContainer: {
       width: "50%",
+      backgroundColor: "transparent"
     },
     header: {
       fontWeight: "bold",
       fontSize: 20,
+      color: "#4d4d4d"
+    },
+    mainHeader: {
+      fontWeight: "bold",
+      fontSize: 24,
       color: "#4d4d4d"
     },
     mainTextContainer: {

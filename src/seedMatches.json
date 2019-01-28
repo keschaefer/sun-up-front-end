@@ -7,17 +7,19 @@
    "current_year_tax": 200000,
    "current_year_energy_cost": 6000,
    "roof_square_footage": 2000,
-   "projected_energy_annual_kW": 0
+   "projected_energy_annual_kW": 0,
+   "image": "../assets/Dane.jpeg"
   },
   {
    "password": "123",
    "name_full": "Beef Mitch",
    "email": "beef@gmail.com",
-   "org_name": "Where's the Beef Hamburgers",
+   "org_name": "Where's the Beef Burgers",
    "current_year_tax": 100000,
    "current_year_energy_cost": 4000,
    "roof_square_footage": 2500,
-   "projected_energy_annual_kW": 0
+   "projected_energy_annual_kW": 0,
+   "image": "../assets/Beef.jpeg"
   },
   {
    "password": "123",
@@ -27,8 +29,10 @@
    "current_year_tax": 200000,
    "current_year_energy_cost": 20000,
    "roof_square_footage": 5000,
-   "projected_energy_annual_kW": 0
-  },{
+   "projected_energy_annual_kW": 0,
+   "image": "../assets/Phil.jpeg"
+  },
+  {
    "password": "123",
    "name_full": "Ben Brinckerhoff",
    "email": "ben@gmail.com",
@@ -36,7 +40,8 @@
    "current_year_tax": 15000,
    "current_year_energy_cost": 3000,
    "roof_square_footage": 1000,
-   "projected_energy_annual_kW": 0
+   "projected_energy_annual_kW": 0,
+   "image": "../assets/Ben.jpeg"
   },
   {
    "password": "123",
@@ -46,6 +51,7 @@
    "current_year_tax": 25000,
    "current_year_energy_cost": 3000,
    "roof_square_footage": 1000,
-   "projected_energy_annual_kW": 0
+   "projected_energy_annual_kW": 0,
+   "image": "../assets/Sonja.jpeg"
   }
 ] 

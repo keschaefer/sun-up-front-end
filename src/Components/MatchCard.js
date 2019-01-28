@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import seeds from '../seedMatches.json';
 import { View, StyleSheet, TouchableOpacity, Image, ImageBackground, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import { Card, ListItem, Button } from 'react-native-elements';
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 
@@ -60,17 +60,21 @@ constructor() {
       if (!this.props.getUser.loading) {
             return (
                seeds.map((seed) => {
+                  console.log(seed.image)
                   return (
-                     <Card containerStyle={{padding: 3, borderWidth: 1, borderColor: "black", width: "100%"}}> 
-                        <View>
-                           <ListItem key={seed.id} style={styles.header}/>
-                           <Text style={styles.header}>{seed.org_name}</Text>
+                     <View key={seed.name_full} style= {styles.cardContainer}> 
+                        <View style= {styles.subIconContainer}>
+                        {/* <Image style= {styles.image} source= {{uri: "https://www.whitehouse.gov/wp-content/uploads/2017/12/44_barack_obama1.jpg"}} /> */}
+                           <Image style= {styles.image} source={require('../assets/Dane.jpeg')} />
+                        </View>   
+                        <View style= {styles.subTextContainer}>
+                           <Text style= {styles.header}>{seed.org_name}</Text>
                            <Text style= {styles.subText}>{seed.name_full}</Text>
                            <View style= {styles.buttonContainer}>
                               <Button style= {styles.inputButton} title= "Connect"></Button>
                            </View>
                         </View>
-                     </Card>
+                     </View>
                   );
                })
             )
@@ -85,45 +89,60 @@ constructor() {
 }
 
 const styles = StyleSheet.create({
-    inputButton: {
-      width: "45%",
-      backgroundColor: '#0098F7',
+   cardContainer: {
+      flexDirection: "row",
+      width: "100%",
+      padding: 3, 
+      borderWidth: 1, 
+      borderColor: "#999999", 
+      width: "100%",
+      marginTop: 5,
       borderRadius: 5,
+      backgroundColor: "white",
+      shadowColor: "#999999",
+      shadowOffset: {width: 2 ,height: 2},
+      shadowOpacity: 2,
+      shadowRadius: 2
+    },
+    image: {
+      width: 50,
+      height: 50,
+      borderRadius: 50,
     },
     buttonContainer: {
-      // flexDirection: 'row',
-      // justifyContent: 'flex-end'
+      width: "50%",
+      marginTop: 3,
+      marginBottom: 3
     },
     header: {
       fontWeight: "bold",
       fontSize: 20,
       color: "#4d4d4d"
     },
-    mainTextContainer: {
-      minHeight: 250,
-      justifyContent: 'space-between',
-      width: "100%",
-      marginTop: 20,
-      marginBottom: 20,
-    },
-    textContainer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      width: "100%",
-      marginTop: 3
-    },
     subTextContainer: {
       flexWrap: "wrap",
-      width: "58%"
+      width: "75%"
     },
-    subTextNumericContainer: {
-      width: "38%"
+    subIconContainer: {
+      width: "25%"
     },
     subText: {
       fontSize: 16,
       color: "#4d4d4d",
-    }
-    
+    },
+   //  mainTextContainer: {
+   //    minHeight: 250,
+   //    justifyContent: 'space-between',
+   //    width: "100%",
+   //    marginTop: 20,
+   //    marginBottom: 20,
+   //  },
+    //  iconContainer: {
+   //    flexDirection: 'row',
+   //    justifyContent: 'space-between',
+   //    width: "100%",
+   //    marginTop: 3
+   //  },    
 })
 
 export default compose(
