@@ -11,7 +11,7 @@ import { Input } from 'react-native-elements';
 
 const getUser = gql`
 query {
-	user(id: "5c4b2e95769ad66ee19f2f88"){
+	user(id: "5c4cb71a3f9de3c0133c38a2"){
       name_full
       org_name
 	}
@@ -93,7 +93,9 @@ render() {
          return (
             <View>
                <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
-                  <Image style= {styles.image} source= {Logo} />
+                  <View style= {styles.inputContainer}>
+                     <Image style= {styles.image} source= {Logo} />
+                  </View>
                </ImageBackground>
             </View>
          )
@@ -107,14 +109,6 @@ const styles = StyleSheet.create({
       height: "100%",
       padding: 20,
     },
-   //  inputUser: {
-   //    width: "70%",
-   //    borderWidth: 1,
-   //    borderColor: "#A0A0A0",
-   //    height: 30,
-   //    borderRadius: 3,
-   //    backgroundColor: "white"
-   //  },
     image: {
       width: 225,
       height: 225,
@@ -133,8 +127,7 @@ const styles = StyleSheet.create({
     subText: {
       fontSize: 12,
       color: "#4d4d4d"
-    }
-    
+    }  
 })
 
 export default compose(

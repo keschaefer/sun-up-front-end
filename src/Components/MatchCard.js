@@ -58,20 +58,20 @@ sendMessage = () =>{
 
    render() {
       if (!this.props.getUser.loading) {
-         return Seeds.map(seed => {
-            console.log(seed.name_full)
+         // return Seeds.map(seed => {
             return (
-               <View key={seed.name_full} style= {styles.inputContainer}>
-                  <Text>{seed.name_full}</Text>
+               <View style= {styles.inputContainer}>
+                  <Text>Matchmaking Coming Soon...</Text>
+                  {/* <Text>{seed.name_full}</Text>
                   <Text>{seed.org_name}</Text>
                   <View>
                   <View style={styles.inputButton}>
                         <Button color='white' title= "Message" onPress={() => this.sendMessage()}/>
                      </View> 
-                  </View>
+                  </View> */}
                </View>
             )
-         })
+         // })
       } else {
          return (
             <View>
