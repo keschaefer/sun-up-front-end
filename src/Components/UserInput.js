@@ -3,6 +3,7 @@ import { View, StyleSheet, TextInput, Button, Text, ImageBackground, Image, Keyb
 import { Actions } from "react-native-router-flux";
 import Backdrop from "../assets/leaves-pattern.png";
 /* Background pattern from Toptal Subtle Patterns */
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Logo from '../assets/SunUp_Logo.png';
 import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
@@ -67,7 +68,10 @@ render() {
       return(
          <View>
             <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
-               <KeyboardAvoidingView style= {styles.inputContainer} behavior= "padding">
+               <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-between',
+                  alignItems: 'center', height: "100%", paddingTop: 30}} 
+                  resetScrollToCoords={{ x: 0, y: 0 }}
+                  scrollEnabled={true}>      
                   <Text style = {styles.header}>{this.props.getUser.user.name_full}, we need a little info to estimate to your energy outlook:</Text>
                      <Input onChangeText={(text) => this.inputHandler('userOrgName', text)}
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "100%"}} inputContainerStyle= {{borderBottomWidth: 0}} inputStyle={{fontSize: 14}}
@@ -86,10 +90,10 @@ render() {
                   <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage.</Text>
                   <View style= {styles.buttonContainer}>
                      <View style={styles.inputButton}>
-                        <Button color="white"title= "Submit" onPress={() => {Actions.useroutlook()}}/>
+                        <Button color="white" title= "Submit" onPress={() => {Actions.useroutlook()}}/>
                      </View>
                   </View>
-               </KeyboardAvoidingView>
+               </KeyboardAwareScrollView>
             </ImageBackground>
          </View>
       )} else {

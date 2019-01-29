@@ -94,16 +94,15 @@ netSavings = (years) => {
                               <Text style= {styles.values}>${this.numberFormat(this.energySavings())}</Text>
                            </View>
                         </View>
-                        <View style= {styles.textContainer}>
-                           <View style= {styles.subTextContainer}>
-                              <Text style= {styles.subText}>Your Net Savings over the next Five Years</Text> 
+                        <View style= {styles.textContainerNet}>
+                           <View style= {styles.subTextContainerNet}>
+                              <Text style= {styles.subTextNet}>Your Net Savings over the next Five Years</Text> 
                            </View>
-                           <View style= {styles.subTextNumericContainer}>
+                           <View style= {styles.subTextNumericContainerNet}>
                               <Text style= {styles.values}>${this.numberFormat(this.netSavings(5))}</Text>
                            </View>
                         </View>
                      </View>
-                     {/* <Image source= {SlidingBar} style= {styles.imageBar}/> */}
                      <Text style= {styles.subText}>Project not a financial win? Connect with other like-minded buisnesses to take advantage of a "partnership flip" and save on solar together while also saving the planet. Enroll by clicking the button below!</Text>
                      <View style= {styles.buttonContainer}>
                         <View style={styles.inputButton}>
@@ -129,7 +128,6 @@ netSavings = (years) => {
 const styles = StyleSheet.create({
    container: {
       justifyContent: "space-between",
-      // height: "100%",
       padding: 20,
     },
     image: {
@@ -168,15 +166,46 @@ const styles = StyleSheet.create({
       width: "100%",
       marginTop: 3
     },
+    textContainerNet: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: "90%",
+      marginTop: 3,
+      padding: 8,
+      paddingTop: 12,
+      paddingBottom: 12,
+      borderWidth: 1, 
+      borderColor: "#999999", 
+      borderRadius: 5,
+      backgroundColor: "white",
+      shadowColor: "#999999",
+      shadowOffset: {width: 2 ,height: 2},
+      shadowOpacity: 2,
+      shadowRadius: 2
+    },
     subTextContainer: {
       flexWrap: "wrap",
-      width: "58%"
+      width: "60%"
+    },
+    subTextContainerNet: {
+      flexWrap: "wrap",
+      width: "70%"
     },
     subTextNumericContainer: {
-      width: "38%"
+      width: "40%",
+      alignItems: 'center'
+    },
+    subTextNumericContainerNet: {
+      width: "30%",
+      alignItems: "center"
     },
     subText: {
       fontSize: 16,
+      color: "#4d4d4d",
+    },
+    subTextNet: {
+      fontSize: 16,
+      fontWeight: "bold",
       color: "#4d4d4d",
     },
     subTextBold: {

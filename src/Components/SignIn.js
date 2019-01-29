@@ -1,6 +1,7 @@
 import  React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Button, Image, ImageBackground, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Logo from '../assets/SunUp_Logo_Horiz2.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 import { Input } from 'react-native-elements';
@@ -24,7 +25,10 @@ class SignIn extends Component {
       return (
          <View style= {styles.background}>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-               <KeyboardAvoidingView style= {styles.inputContainer} behavior= "padding">
+               <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-between',
+                  alignItems: 'center', height: "100%", paddingTop: 70, paddingBottom: 50}} 
+                  resetScrollToCoords={{ x: 0, y: 0 }}
+                  scrollEnabled={true}>  
                   <Image style= {styles.image} source= {Logo} />            
                   <Input onChangeText={(text) => this.inputHandler('userEmail', text)} containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}} placeholder= "email" autoCapitalize= "none" autoCorrect= {false} keyboardType= "email-address" leftIcon={{ type: 'font-awesome', name: 'envelope' }}/>
                   <Input onChangeText={(text) => this.inputHandler('userPassword', text)} containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}} placeholder= "password" secureTextEntry leftIcon={{ type: 'font-awesome', name: 'lock' }}/>
@@ -36,7 +40,7 @@ class SignIn extends Component {
                         <Button color='white'title= "Sign Up" onPress={() => Actions.signup()}/>
                      </TouchableOpacity>  
                   </View> 
-               </KeyboardAvoidingView>
+               </KeyboardAwareScrollView>
             </ImageBackground>
          </View>
       );
