@@ -25,8 +25,8 @@ class SignIn extends Component {
       return (
          <View style= {styles.background}>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-               <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-between',
-                  alignItems: 'center', height: "100%", paddingTop: 70, paddingBottom: 50}} 
+               <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-around',
+                  alignItems: 'center', height: "100%", paddingTop: 30, paddingBottom: 30}} 
                   resetScrollToCoords={{ x: 0, y: 0 }}
                   scrollEnabled={true}>  
                   <Image style= {styles.image} source= {Logo} />            
