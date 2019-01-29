@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
       marginTop: 50,
     },
     inputButton: {
-      backgroundColor: "#0098F7",
+      backgroundColor: "#ffd11a",
       margin: 8,
       borderRadius: 5,
       width: "50%",
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     subText: {
       fontSize: 12,
       color: "#4d4d4d"
-    }  
+    },  
 })
 
 export default compose(

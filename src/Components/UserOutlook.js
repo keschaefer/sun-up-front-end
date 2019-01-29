@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
       width: "100%"
     },
     inputButton: {
-      backgroundColor: "#0098F7",
+      backgroundColor: "#ffd11a",
       margin: 8,
       borderRadius: 5,
       width: "50%",
@@ -178,6 +178,11 @@ const styles = StyleSheet.create({
     subText: {
       fontSize: 16,
       color: "#4d4d4d",
+    },
+    subTextBold: {
+      fontSize: 12,
+      fontWeight: "bold",
+      color: "#4d4d4d"
     },
     values: {
       fontSize: 16,

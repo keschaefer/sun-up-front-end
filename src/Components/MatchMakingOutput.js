@@ -66,14 +66,14 @@ handleCheckBox = () => {
                <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
                   <ScrollView contentContainerStyle= {styles.container}>
                      <View style= {{width: "100%", paddingBottom: 10}}>
-                        <Text style= {styles.mainHeader}>Here Are Your Matches!</Text>
+                        <Text style= {styles.mainHeader}>Here are the businesses that match your criteria</Text>
                         <Text style= {styles.subText}>We've based your matches on your personalized solar estimates</Text>
                      </View>
                      <View style= {{width: "100%", paddingBottom: 10}}>
                         <MatchCard/>
                      </View>
                         <View>
-                           <Text style= {styles.subText}>Interested in receiving alerts about new matches? </Text>
+                           <Text style= {styles.subText}>Interested in receiving alerts about new matches as they come up? </Text>
                            <CheckBox center title='Click Here!' containerStyle= {{backgroundColor: 'transparent', borderColor: 'transparent'}} checked={this.state.checked} onPress= {() => this.handleCheckBox()}/>
                         </View>
                      </ScrollView>

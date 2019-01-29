@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import seeds from '../seedMatches.json';
-import { View, StyleSheet, TouchableOpacity, Image, ImageBackground, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, ImageBackground, Text, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Card, ListItem, Button } from 'react-native-elements';
+import { Card, ListItem} from 'react-native-elements';
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 
@@ -69,9 +69,9 @@ constructor() {
                         <View style= {styles.subTextContainer}>
                            <Text style= {styles.header}>{seed.org_name}</Text>
                            <Text style= {styles.subText}>{seed.name_full}</Text>
-                           <View style= {styles.buttonContainer}>
-                              <Button style= {styles.inputButton} title= "Connect"></Button>
-                           </View>
+                           <View style= {styles.inputButton}>
+                              <Button color="white" title= "Connect" onPress={() => {}}/>
+                           </View> 
                         </View>
                      </View>
                   );
@@ -114,10 +114,18 @@ const styles = StyleSheet.create({
       shadowOpacity: 2,
       shadowRadius: 2
     },
-    buttonContainer: {
-      width: "50%",
+    bottomRow: {
+      width: "100%",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center"
+    },
+    inputButton: {
+      width: "45%",
       marginTop: 3,
-      marginBottom: 3
+      marginBottom: 3,
+      backgroundColor: "#ffd11a",
+      borderRadius: 5
     },
     header: {
       fontWeight: "bold",

@@ -1,7 +1,7 @@
 import  React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, Button, Image, ImageBackground, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import Logo from '../assets/SunUp_Logo.png';
+import Logo from '../assets/SunUp_Logo_Horiz2.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 import { Input } from 'react-native-elements';
 
@@ -45,15 +45,15 @@ class SignIn extends Component {
  
 const styles = StyleSheet.create({
    inputContainer: {
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center',
       height: "100%",
       paddingTop: 40,
       paddingBottom: 40
     },
     image: {
-      width: 150,
-      height: 150,
+      width: "85%",
+      height: "20%",
       borderRadius: 5,
     },
     buttonContainer: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     inputButton: {
       width: "45%",
-      backgroundColor: '#0098F7',
+      backgroundColor: '#ffd11a',
       borderRadius: 5,
     } 
 })

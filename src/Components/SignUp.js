@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Actions } from 'react-native-router-flux'
-import Logo from '../assets/SunUp_Logo.png';
+import Logo from '../assets/SunUp_Logo_Horiz2.png';
 import BackgroundImg from '../assets/solar-panels.jpg'
 import { Input } from 'react-native-elements';
 import { graphql, compose } from 'react-apollo';
@@ -50,8 +51,11 @@ class SignUp extends Component {
       return(
          <View>
             <ImageBackground source={BackgroundImg} style={{width: 'auto', height: '100%'}}>
-               <KeyboardAvoidingView style= {styles.inputContainer}>
-                  <Image style= {styles.image} source= {Logo} />
+               <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-between',
+                     alignItems: 'center', height: "100%", paddingTop: 40}} 
+                     resetScrollToCoords={{ x: 0, y: 0 }}
+                     scrollEnabled={true}>
+                  <Image style= {styles.image} source= {Logo}/>
                   <Input onChangeText={(text) => this.inputHandler('userFullName', text)} 
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "85%"}} inputContainerStyle= {{borderBottomWidth: 0}}
                      placeholder= "full name"
@@ -78,7 +82,7 @@ class SignUp extends Component {
                         <Button color='white'title= "Sign Up" onPress={() => this.submitForm()}/>
                      </TouchableOpacity>  
                   </View>  
-               </KeyboardAvoidingView>
+               </KeyboardAwareScrollView>
             </ImageBackground>
          </View>
       )
@@ -87,15 +91,13 @@ class SignUp extends Component {
 
 const styles = StyleSheet.create({
    inputContainer: {
-      justifyContent: 'space-between',
-      alignItems: 'center',
       height: "100%",
       paddingTop: 40,
       // paddingBottom: 40
     },
     image: {
-      width: 150,
-      height: 150,
+      width: "85%",
+      height: "20%",
       borderRadius: 5,
     },
     buttonContainer: {
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
     },
     inputButton: {
       width: "45%",
-      backgroundColor: '#0098F7',
+      backgroundColor: '#ffd11a',
       borderRadius: 5,
     } 
 })
