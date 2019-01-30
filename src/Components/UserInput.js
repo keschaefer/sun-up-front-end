@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, TextInput, Button, Text, ImageBackground, Image, KeyboardAvoidingView} from "react-native";
+import { View, StyleSheet, TouchableOpacity, Button, Text, ImageBackground, Image, Linking} from "react-native";
 import { Actions } from "react-native-router-flux";
 import Backdrop from "../assets/leaves-pattern.png";
 /* Background pattern from Toptal Subtle Patterns */
@@ -10,6 +10,9 @@ import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import { Input } from 'react-native-elements';
 
+params = {
+         'api_key': 'txmFF3Jhtstm',
+       }
 
 const getUser = gql`
 query {
@@ -63,13 +66,24 @@ submitFormUserInput = () => {
    console.log(this.state)
 }
 
+// getRoofArea = (address) => {
+//    fetch('https://www.parsehub.com/api/v2/projects/tATRTxLaSu7G/run', {
+//         method: "POST",
+//         headers: { "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"},
+//         body: JSON.stringify(params)
+//       })
+      
+//       .then(response => console.log(response))
+//    }
+
 render() {
    if (!this.props.getUser.loading) {
+      this.getRoofArea()
       return(
          <View>
             <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
                <KeyboardAwareScrollView contentContainerStyle= {{ justifyContent: 'space-between',
-                  alignItems: 'center', height: "100%", paddingTop: 30}} 
+                  alignItems: 'center', height: "100%", padding: 20}} 
                   resetScrollToCoords={{ x: 0, y: 0 }}
                   scrollEnabled={true}>      
                   <Text style = {styles.header}>{this.props.getUser.user.name_full}, we need a little info to estimate to your energy outlook:</Text>
@@ -87,7 +101,11 @@ render() {
                      containerStyle={{ backgroundColor: 'white', borderRadius: 15, width: "100%"}} inputContainerStyle= {{borderBottomWidth: 0}} inputStyle={{fontSize: 14}}
                      placeholder= "Square Feet Available for Solar" keyboardType= "numbers-and-punctuation"
                      leftIcon={{ type: 'font-awesome', name: 'leaf' }}/>
-                  <Text style={styles.subText}>*Visit www.projectsunroof.com to get your roof's square footage.</Text>
+                  <TouchableOpacity onPress={() => Linking.openURL('https://www.google.com/get/sunroof')}>
+                     <Text style={styles.subText}>
+                        *Visit <Text style= {{fontWeight: 'bold', textDecorationLine: 'underline'}}>Project Sunroof </Text>to get your roof's square footage.
+                     </Text>
+                     </TouchableOpacity>
                   <View style= {styles.buttonContainer}>
                      <View style={styles.inputButton}>
                         <Button color="white" title= "Submit" onPress={() => {Actions.useroutlook()}}/>
