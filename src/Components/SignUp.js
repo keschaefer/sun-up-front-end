@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, TextInput, Button, Image, ImageBackground, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Button, Image, ImageBackground} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Actions } from 'react-native-router-flux'
 import Logo from '../assets/SunUp_Logo_Horiz2.png';
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
    inputContainer: {
       height: "100%",
       paddingTop: 40,
-      // paddingBottom: 40
     },
     image: {
       width: "85%",

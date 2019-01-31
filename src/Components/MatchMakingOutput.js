@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MatchCard from './MatchCard.js'
-import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, ImageBackground, Text, ScrollView } from 'react-native';
 import Backdrop from "../assets/leaves-pattern.png";
 /* Background pattern from Toptal Subtle Patterns */
 import gql from "graphql-tag";
@@ -18,6 +18,7 @@ query {
 	}
 }
 `
+
 class MatchMakingOutput extends Component {
 constructor() {
    super() 

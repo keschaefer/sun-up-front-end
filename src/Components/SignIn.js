@@ -1,5 +1,5 @@
 import  React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Button, Image, ImageBackground, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Button, Image, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Logo from '../assets/SunUp_Logo_Horiz2.png';

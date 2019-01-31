@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TouchableOpacity, Image, Button, ImageBackground, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Image, Button, ImageBackground, Text, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import SlidingBar from '../assets/sliding-scale.png';
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import Backdrop from "../assets/leaves-pattern.png";
@@ -19,6 +18,7 @@ query {
 	}
 }
 `
+
 class UserOutlook extends Component {
 constructor() {
    super() 
@@ -27,6 +27,7 @@ constructor() {
          currentUserNameFull: ""
    }
 }
+
 numberFormat = (num) => {
    return num.toLocaleString(undefined, {
       minimumFractionDigits: 0,

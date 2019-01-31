@@ -5,7 +5,6 @@ import Backdrop from "../assets/leaves-pattern.png";
 /* Background pattern from Toptal Subtle Patterns */
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Logo from '../assets/SunUp_Logo.png';
-import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 import { Input } from 'react-native-elements';
@@ -22,6 +21,7 @@ query {
 	}
 }
 `
+
 const addUserFinancialInputs = gql`
    mutation ($id: String, $current_year_tax: Number, $current_year_energy_cost: Int, $roof_square_footage: Number, $projected_energy_annual_kW: Number) {
       updateUser(id: $id, current_year_tax: $current_year_tax, current_year_energy_cost: $current_year_energy_cost, roof_square_footage: $roof_square_footage, projected_energy_annual_kW: $projected_energy_annual_kW ){

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import seeds from '../seedMatches.json';
-import { View, StyleSheet, TouchableOpacity, Image, ImageBackground, Text, Button } from 'react-native';
+import { View, StyleSheet, Image, Text, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { Card, ListItem} from 'react-native-elements';
 import gql from "graphql-tag";
 import { graphql, compose } from "react-apollo";
 
@@ -18,6 +17,7 @@ query {
 	}
 }
 `
+
 class MatchCard extends Component {
 constructor() {
    super() 
@@ -26,35 +26,6 @@ constructor() {
          currentUserNameFull: ""
    }
 }
-
-// costOfInstall = () => {
-//    let costOfInstall = this.props.getUser.user.roof_square_footage * 14.218 * 3.85
-//    return costOfInstall.toFixed(2)
-// }
-
-// taxITC = () => {
-//    return (this.costOfInstall() * .3).toFixed(2)
-// }
-
-// bonusDepreciation = () => {
-//    return ((this.costOfInstall() * .85) * .3).toFixed(2)
-// }
-
-// energySavings = () => {
-//    return ((((this.props.getUser.user.roof_square_footage * .014198) * 3.5) * .13) * 365).toFixed(2)
-// }
-
-// netSavings = (years) => {
-//    return (Number(this.costOfInstall()) - ( Number(this.taxITC()) + Number(this.bonusDepreciation()) + (years * Number(this.energySavings())))).toFixed(2)
-// }
-
-// energyPotential = () => {
-
-// }
-
-// sendMessage = () =>{
-//    console.log("Hi")
-// }
 
    render() {
       if (!this.props.getUser.loading) {
