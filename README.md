@@ -9,9 +9,7 @@ SunUp is a full stack application created to assess an organization's financial 
 * [SunUp Front-End Repository](https://github.com/keschaefer/sun-up-front-end) - SunUp front-end Github repository.
 * [SunUp Back-End Repository](https://github.com/keschaefer/sun-up-back-end) - SunUp back-end Github repository.
 
-##Technologies Used
-
-What things you need to install the software and how to install them
+## Technologies Used
 
 * [NPM](https://www.npmjs.com/) - npm is a package manager for the JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js.
 * [React Native](https://facebook.github.io/react-native/docs/getting-started.html) - React Native is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android. It’s based on React, but instead of targeting the browser, it targets mobile platforms.
@@ -22,5 +20,5 @@ What things you need to install the software and how to install them
 
 ## Preview
 
-![snag.gy]()
-![snag.gy]()
+![Login](https://dl.dropboxusercontent.com/s/nho4f49x51ogu40/Login_SunUp.PNG)
+![UserInput](https://dl.dropboxusercontent.com/s/wm2rxjcyj2rkf4p/User_Outlook_SunUp.PNG)

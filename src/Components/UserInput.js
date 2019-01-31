@@ -66,19 +66,8 @@ submitFormUserInput = () => {
    console.log(this.state)
 }
 
-// getRoofArea = (address) => {
-//    fetch('https://www.parsehub.com/api/v2/projects/tATRTxLaSu7G/run', {
-//         method: "POST",
-//         headers: { "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"},
-//         body: JSON.stringify(params)
-//       })
-      
-//       .then(response => console.log(response))
-//    }
-
 render() {
    if (!this.props.getUser.loading) {
-      this.getRoofArea()
       return(
          <View>
             <ImageBackground source={Backdrop} style={{width: "100%", height: "100%"}}>
