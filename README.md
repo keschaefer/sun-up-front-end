@@ -22,3 +22,4 @@ SunUp is a full stack application created to assess an organization's financial 
 
 ![Login](https://dl.dropboxusercontent.com/s/nho4f49x51ogu40/Login_SunUp.PNG)
 ![UserInput](https://dl.dropboxusercontent.com/s/wm2rxjcyj2rkf4p/User_Outlook_SunUp.PNG)
+![UserOutput](https://www.dropbox.com/s/c3djlii1ss4s4c1/User_Input_SunUp.PNG)
