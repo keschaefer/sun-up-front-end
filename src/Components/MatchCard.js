@@ -31,7 +31,6 @@ constructor() {
       if (!this.props.getUser.loading) {
             return (
                seeds.map((seed) => {
-                  console.log(seed.image)
                   return (
                      <View key={seed.name_full} style= {styles.cardContainer}> 
                         <View style= {styles.subIconContainer}>
